@@ -1,11 +1,12 @@
 import {combineReducers} from 'redux'
+import postReducer from './postReducer'
 
-const dummyReducer = ()=>{
-    return null
-}
+// const dummyReducer = ()=>{
+//     return null
+// }
 
 
 
 export default combineReducers({
-    dummy:dummyReducer
+    posts:postReducer
 })
