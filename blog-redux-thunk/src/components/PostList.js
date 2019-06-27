@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import {fetchPosts} from './../actions'
+import UserHeader from './UserHeader';
 
 const PostList= (props)=> {
     //destructuring because warning by eslint
@@ -14,9 +15,13 @@ const PostList= (props)=> {
       return postData.map(postItem=>{
         return (
           <div key={postItem.id}>
-            <h2>{postItem.title}</h2>
-            <p>{postItem.body}</p>
+            <div>
+              <h2>{postItem.title}</h2>
+              <p>{postItem.body}</p>
+            </div>
+            <UserHeader userId={postItem.userId} />
           </div>
+          
         );
       });
     }

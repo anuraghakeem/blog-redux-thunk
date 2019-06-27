@@ -1,5 +1,7 @@
 import {combineReducers} from 'redux'
 import postReducer from './postReducer'
+import userReducer from './userReducer'
+
 
 // const dummyReducer = ()=>{
 //     return null
@@ -8,5 +10,6 @@ import postReducer from './postReducer'
 
 
 export default combineReducers({
-    posts:postReducer
+    posts : postReducer,
+    users : userReducer
 })
