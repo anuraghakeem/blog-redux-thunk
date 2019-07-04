@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
-import {fetchPosts} from './../actions'
+import {fetchPosts,fetchPostsAndUsers} from './../actions'
 import UserHeader from './UserHeader';
 
 const PostList= (props)=> {
     //destructuring because warning by eslint
-    const {fetchPosts,postData} = props ;
+    const {fetchPostsAndUsers,postData} = props ;
     useEffect(() => {
         // props.fetchPosts();
-        fetchPosts();
-    },[fetchPosts]);
+        fetchPostsAndUsers();
+    },[fetchPostsAndUsers]);
     console.log(props);
     const renderList=() =>{
       return postData.map(postItem=>{
@@ -39,5 +39,5 @@ const mapStateToProps=(state)=>{
 }
 
 export default connect(mapStateToProps,
-  {fetchPosts:fetchPosts}
+  {fetchPostsAndUsers:fetchPostsAndUsers}
   )(PostList);
